@@ -2,45 +2,53 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var passport = require('passport');
-var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-require('./models/models');
+
 var routes = require('./routes/index');
-var authenticate = require('./routes/authenticate')(passport);
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost:27017/mcar-share', function(err) {
-    if (err) throw err;
-});
-
+var users = require('./routes/users');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
+
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(session({
-    secret: 'super secret'
-}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
-app.use(passport.session());
 
-var initPassport = require('./passport-init');
-initPassport(passport);
+app.get('/', function(req, res) {
+    return res.render("index");
+});
 
-app.use('/', routes);
-// app.use('/users', users);
-app.use('/auth', authenticate);
+app.get('/index.html', function(req, res) {
+    return res.render("index");
+});
+
+app.get('/all%20the%20cars.html', function(req, res) {
+    return res.render("all the cars");
+});
+
+app.get('/exactCar.html', function(req, res) {
+    return res.render("exactCar");
+});
+
+app.get('/My%20Account.html', function(req, res) {
+    return res.render("My Account");
+});
+
+app.get('/picUpLocationAndDates.html', function(req, res) {
+    return res.render("picUpLocationAndDates");
+});
+
+app.get('/sign%20in%20page.html', function(req, res) {
+    return res.render("sign in page");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
