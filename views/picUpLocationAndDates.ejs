@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <title>M-Car Share</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/css%20for%20all%20pages.css">
+    <link rel="stylesheet" href="css/home%20page.css">
+    <link rel="stylesheet" href="css/cssForPicUpLocationAndDates.css">
+   
+    <script src="js/js-for-all-pages/jquery-2.1.3.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/js-for-home-page/bookModifyArea.js"></script>
+    <script src="js/jsForBookingPageNotInHomePage/LocalStorageWithBookingProssesNotForHomePage.js"></script>
+    <script src="js/js-for-all-pages/clearLSofBookingProsses.js"></script>
+    <script src="js/js-for-all-pages/arrayWithAllUsers.js"></script>
+    <script src="js/js-for-all-pages/arrayWithCurentUser.js"></script>
+    <script src="js/js-for-all-pages/localStorage.js"></script>
+    <script src="js/js-for-all-pages/todaysYear.js"></script>
+    <script src="js/js-for-all-pages/welcomeClientWithTime.js"></script>
+    <script src="js/js-for-all-pages/logIn.js"></script>
+    <script src="js/js-for-all-pages/logOut.js"></script>
+    <script src="js/js-for-home-page/clearWelcome.js"></script>
+</head>
+
+<body>
+    <div class="theWholePage">
+        <header class="topHeader">
+          
+            <div class="childrenOfHeader">
+            </div>
+            <div class="childrenOfHeader logInOrOut">
+                <div class="welcomeTheClient" id="welcomeTheClient"></div>
+                <div class="hideLogIn" id="logIn">Sign in</div>
+                <div class="hideLogOut" id="logOut">Sign out</div>
+            </div>
+        </header>
+
+      
+        <nav class="MainNav">
+            <div class="flex2 dispalyNoneUnder650px"></div>
+            <a class="flex1 hoverGray navLinkCss pageYouAreNotOn" href="index.html">
+                <div>Home Page</div>
+            </a>
+
+            <a id="seeCarsPage" class="flex1 hoverGray navLinkCss noBorder  pageYouOn" href="all%20the%20cars.html">
+                <div>Available Cars</div>
+            </a>
+            <a id="showOnlyWhenLogedIn" class="flex1 hoverGray navLinkCss pageYouAreNotOn hideThisWhileClientNotLogedIn" href="My%20Account.html">
+                <div>My Account</div>
+            </a>
+            <a id="dontShowWhenLogedaiN" class="flex1 hoverGray navLinkCss pageYouAreNotOn" href="sign%20in%20page.html">
+                <div>Sign up / Sign in</div>
+            </a>
+        </nav>
+        <div class="status dispalyNoneUnder650px" id="status">
+            <div class="singlStatusStage stepPageDone">1. Car Class</div>
+            <div class="stepsConector "></div>
+            <div class="singlStatusStage stepPageDone">2. Car Model</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage stepPageThatYouAreOn">3. Location and Dates</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">4. Price</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">5. Review and Book</div>
+        </div>
+        <section class="bookACar newMarginTop newMarginLeft29" id="bookACar">
+            <article>
+                <hgroup class="bookModify">
+                    <div class="flex1 bookAcar newFontSize">Choose Location and Dates</div>
+
+                </hgroup>
+                <div class="bookingFormContainer newMarginTop">
+                    <form class="bookingForm" action="">
+                        <div id="picUpReturnLocation" class="flex3 dispalyFlex borderToDivide">
+                            <div class="flex1">
+                                <div class="step1"></div>
+                            </div>
+                            <div class="flex4 location">
+                                <span><span class="fontSize85Precent bold">Pick-up Location:*</span>  <span class="fontSize80Precent">Select from locations</span></span>
+                                <select class="selectLocation" id="selectPicUpLocation">
+                                   
+                                </select>
+                                <br>
+                                <input id="returnToDiffrentLocationInput" type="checkbox">
+                                <label for="returnToDiffrentLocationInput" class="returnToDiffrentLocationInput">Return car to a different location
+                                </label>
+                                <br>
+                                <div id="selectBoxIfReturnToDiffrentLocation" class="selectBoxIfReturnToDiffrentLocation">
+                                    <span><span class="fontSize85Precent bold">Return Location:*</span>  <span class="fontSize80Precent">(Select Location</span></span>
+                                    <select class="selectLocation" id="selectReturnLocation">
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="picUpReturnDate" class="flex4 dispalyFlex ">
+                            <div class="flex1">
+                                <div class="step2"></div>
+                            </div>
+                            <div class="flex4 pickUpAndReturnDates">
+                                <div>
+                                    <span><span class="fontSize85Precent bold">Pick-up Date:*</span>  <span class="fontSize80Precent">(date and time)</span></span>
+                                    <br>
+                                    <input class="pickUpDate" id="pickUpDate" type="date">
+                                    <select name="" class="pickUpHour" id="pickUpHour">
+                                        <option value="5:00">5:00</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00" selected>12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="23:00">23:00</option>
+                                        <option value="23:59">23:59</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span><span class="fontSize85Precent bold">Return Date:*</span>  <span class="fontSize80Precent">(date and time)</span></span>
+                                    <br>
+                                    <input class="returnDate" id="returnDate" type="date">
+                                    <select name="" class="returnHour" id="returnHour">
+                                        <option value="5:00">5:00</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00" selected>12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="23:00">23:00</option>
+                                        <option value="23:59">23:59</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="bookNowButton" class="flex1 dispalyFlex">
+                            <input class="submitOrder newSubmitOrder" id="notHomePageBookingButton" type="button" value="Continue ">
+                        </div>
+                        <div id="warning" class="warning">Please fill up all fileds that have a *</div>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <title>M-Car Share</title>  
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/css%20for%20all%20pages.css">
+    <link rel="stylesheet" href="css/css%20for%20account%20page.css">
+    
+    <script src="js/js-for-all-pages/jquery-2.1.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/js-for-all-pages/clearLSofBookingProsses.js"></script>
+
+    <script src="js/js-for-all-pages/arrayWithAllUsers.js"></script>
+    <script src="js/js-for-all-pages/arrayWithCurentUser.js"></script>
+    <script src="js/js-for-all-pages/localStorage.js"></script>
+    <script src="js/js-for-all-pages/todaysYear.js"></script>
+    <script src="js/js-for-all-pages/welcomeClientWithTime.js"></script>
+    <script src="js/js-for-all-pages/logIn.js"></script>
+    <script src="js/js-for-account-page/logOutFromAccouunntPage.js"></script>
+    <script src="js/js-for-account-page/memberDetails.js"></script>
+    <script src="js/js-for-account-page/enterReservationToPage.js"></script>
+    <script src="js/js-for-account-page/validationVandX.js"></script>
+    <script src="js/js-for-account-page/changeMemberDetails.js"></script>
+</head>
+
+<body>
+    <div class="theWholePage">
+        <header class="topHeader">
+           
+            <div class="childrenOfHeader"></div>
+            <div class="childrenOfHeader logInOrOut">
+                <div class="welcomeTheClient" id="welcomeTheClient"></div>
+                <div class="hideLogIn" id="logIn">Sign in</div>
+                <div class="hideLogOut" id="logOut">Sign out</div>
+            </div>
+        </header>
+       
+        <nav class="MainNav">
+            <div class="flex2 dispalyNoneUnder650px"></div>
+
+            <a class="flex1 hoverGray navLinkCss noBorder pageYouAreNotOn" href="index.html">
+                <div>Home Page</div>
+            </a>
+
+            <a id="seeCarsPage" class="flex1 hoverGray navLinkCss pageYouAreNotOn" href="all%20the%20cars.html">
+                <div>Available Cars</div>
+            </a>
+            <a class="flex1 hoverGray navLinkCss pageYouOn" href="My%20Account.html">
+                <div>My Account</div>
+            </a>
+        </nav>
+
+        <div class="whiteBG">
+            <h1>My Info</h1>
+            <div class="dadOfMyInfo">
+                <div class="displayFlex">
+                    <div class="flex1">First Name:</div>
+                    <div class="flex1" id="fNameMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">Last Name:</div>
+                    <div class="flex1" id="lNameMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">Email:</div>
+                    <div class="flex1" id="emailMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">Home Number:</div>
+                    <div class="flex1" id="hPhoneMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">Cell Number:</div>
+                    <div class="flex1" id="cPhoneMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">DOB:</div>
+                    <div class="flex1" id="DOBMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">License Number:</div>
+                    <div class="flex1" id="licenceNumberMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">User Name:</div>
+                    <div class="flex1" id="userNameMember"></div>
+                </div>
+                <div class="displayFlex">
+                    <div class="flex1">Password:</div>
+                    <div class="flex1" id="passwordMember"></div>
+                </div>
+
+            </div>
+            <div class="">
+                <input id="changeAccountDetails" class="changeAccountDetails" type="button" value="Change Info">
+            </div>
+        </div>
+        <div class="changeDetailsArea" id="changeDetailsArea">
+            <form autocomplete="off" action="">
+                <div class="displayFlexColumn">
+                    <div class="flex1 dispalyFlex firstName rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">1</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>First Name:*</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="fName" type="text">
+                            </div>
+                            <img id="fNameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="fNameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex lastName rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">2</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Last Name:*</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="lName" type="text">
+                            </div>
+                            <img id="lNameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="lNameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex email rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">3</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Email:*</span>
+                            </div>
+
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="emailAdreess" type="email">
+                            </div>
+                            <img id="emailGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="emailBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                            <br>
+                            <div class="emailInUse" id="emailInUse">this email address is in use, <span class="logInWhenEmailIsInUse" id="logInWhenEmailIsInUse">log in</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex homePhone rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">4</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Home Phone:</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="homePhone" type="number">
+                            </div>
+                            <img id="homePhoneGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="homePhoneBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex cellPhone rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber">5</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>Cell Phone:</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="cellPhone" type="number">
+                        </div>
+                        <img id="cellPhoneGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                        <img id="cellPhoneBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex dateOfBirth rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber">6</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>Date of Birth:*</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="DOB" class="dateInput" type="date">
+                        </div>
+                        <img id="DOBGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV moveTheV">
+                        <img id="DOBBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX moveThex">
+
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex lisenceNumber rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber">7</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>License Number:*</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="licenseNumber" type="number">
+                        </div>
+                        <img id="licenseNumberGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                        <img id="licenseNumberBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex userName rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber">8</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>Choose your username:*</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="usernameChoosen" type="text">
+                        </div>
+                        <img id="usernameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                        <img id="usernameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                        <br>
+                        <div class="userNameInUse" id="userNameInUse">this username is in use, <span class="logInWhenUserNameInUse" id="logInWhenUserNameInUse">log in</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex userPassword rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber">9</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>Creat a Password:*</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="firstPassword" type="password">
+                        </div>
+                        <img id="passwordGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                        <img id="passwordBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex reEnterUserPassword rowOfInput">
+                    <div class="flex1">
+                        <div class="stepsToFill"><span class="centerTheNumber10">10</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="detailOfInput"><span>Enter Password Again:*</span>
+                        </div>
+                    </div>
+                    <div class="flex3">
+                        <div class="inputOfRegister">
+                            <input id="repetPassword" type="password">
+                        </div>
+                        <img id="repPasswordGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                        <img id="repPasswordBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                    </div>
+                </div>
+                <div class="flex1 dispalyFlex submitRegerstrasion rowOfInput">
+                    <input id="submitForm" class="submitForm" type="button" value="Change">
+                </div>
+                <div class="flex1">
+                    <div id="notAlltInputsCoract" class="notAlltInputsCoract">Please make sure all fileds have a&nbsp;
+                        <img src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="">&nbsp;next to them</div>
+                </div>
+            </form>
+        </div>
+        <div class="resevationsArea" id="resevationsArea">
+            <h1 class="reservationHeader">My Reservation's</h1> 
+            <div class="headOfDetails headerMoreCss">
+                <div class="details">Location</div>
+                <div class="details">Date</div>
+                <div class="details">Car</div>
+                <div class="detailsPrice">Price</div>
+            </div>
+            <hr>
+
+        </div>
+    </div>
+   
+</body>
+
+</html>

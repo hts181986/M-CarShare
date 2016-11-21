@@ -1,0 +1,53 @@
+.newFontSize {
+    font-size: 122%;
+}
+.newMarginTop {
+    margin-top: 1%;
+}
+.status {
+    margin-left: 25%;
+}
+.stepsConector {
+    display: inline-block;
+    width: 14px;
+    height: 5px;
+    position: relative;
+    margin-left: -4px;
+    background-color: black;
+    margin-right: -5px;
+}
+.singlStatusStage {
+    margin-top: 1%;
+    position: relative;
+    color: black;
+    padding: 1%;
+    opacity: 0.4;
+    display: inline-block;
+    font-size: 14px;
+    background-color: white;
+}
+.stepPageThatYouAreOn {
+    opacity: 1;
+    color: rgb(87, 115, 255);
+}
+.stepPageDone {
+    color: green;
+}
+.newSubmitOrder {
+    margin-left: 56%;
+    width: 38%;
+    margin-top: -20px;
+}
+.newMarginLeft29 {
+    margin-left: 29%;
+}
+@media screen and (max-width: 650px) {
+    .newMarginLeft29 {
+        margin-left: 6%;
+        margin-top: 5%;
+    }
+    .dispalyNoneUnder650px {
+        visibility: hidden;
+        display: none;
+    }
+}

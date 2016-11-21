@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <title>M-Car Share</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/css%20for%20all%20pages.css">
+    <link rel="stylesheet" href="css/css%20for%20sign%20in%20page.css">  
+    <script src="js/js-for-all-pages/jquery-2.1.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/js-for-all-pages/clearLSofBookingProsses.js"></script>
+    <script src="js/js-for-all-pages/localStorage.js"></script>
+    <script src="js/js-for-all-pages/arrayWithAllUsers.js"></script>
+    <script src="js/js-for-all-pages/arrayWithCurentUser.js"></script>
+    <script src="js/js-for-all-pages/todaysYear.js"></script>
+    <script src="js/js-for-sign-in-page/signinRegisterArea.js"></script>
+    <script src="js/js-for-sign-in-page/validationVandX.js"></script>
+    <script src="js/js-for-sign-in-page/buildNewUser.js"></script>
+    <script src="js/js-for-sign-in-page/logIn.js"></script>
+    <script src="js/js-for-all-pages/welcomeClientWithTime.js"></script>
+    <script src="js/js-for-all-pages/logOut.js"></script>
+    <script src="js/js-for-all-pages/logIn.js"></script>
+</head>
+
+<body>
+    <div class="theWholePage">
+        <header class="topHeader">
+          
+            <div class="childrenOfHeader"></div>
+            <div class="childrenOfHeader logInOrOut">
+                <div class="welcomeTheClient" id="welcomeTheClient"></div>
+                <div id="logIn" class="hideLogIn">Sign in</div>
+                <div class="hideLogOut" id="logOut">Sign out</div>
+            </div>
+        </header>
+        <nav class="MainNav">
+            <div class="flex2 dispalyNoneUnder650px"></div>
+
+            <a class="flex1 hoverGray navLinkCss noBorder pageYouAreNotOn" href="index.html">
+                <div>Home Page</div>
+            </a>
+
+            <a id="seeCarsPage" class="flex1 hoverGray navLinkCss pageYouAreNotOn" href="all%20the%20cars.html">
+                <div>Available Cars</div>
+            </a>
+
+            <a class="flex1 hoverGray navLinkCss pageYouOn noBorder" href="sign%20in%20page.html">
+                <div>Sign up / Sign in</div>
+            </a>
+        </nav>
+        <section class="register" id="register">
+            <article>
+                <hgroup class="registerAndSignin">
+                    <div class="flex1 registerNewCoustumer">Sign up</div>
+                    <div class="flex1 signIn hoverGray" id="signIn">Sign in</div>
+                </hgroup>
+                <form autocomplete="off" action="">
+                    <div class="displayFlexColumn">
+                        <div class="flex1 dispalyFlex firstName rowOfInput">
+                            <div class="flex1">
+                                <div class="stepsToFill"><span class="centerTheNumber">1</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="detailOfInput"><span>First Name:*</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="inputOfRegister">
+                                    <input id="fName" type="text" placeholder="3 characters or more!">
+                                </div>
+                                <img id="fNameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                                <img id="fNameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                            </div>
+                        </div>
+                        <div class="flex1 dispalyFlex lastName rowOfInput">
+                            <div class="flex1">
+                                <div class="stepsToFill"><span class="centerTheNumber">2</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="detailOfInput"><span>Last Name:*</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="inputOfRegister">
+                                    <input id="lName" type="text" placeholder="3 characters or more!">
+                                </div>
+                                <img id="lNameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                                <img id="lNameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+
+                            </div>
+                        </div>
+                        <div class="flex1 dispalyFlex email rowOfInput">
+                            <div class="flex1">
+                                <div class="stepsToFill"><span class="centerTheNumber">3</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="detailOfInput"><span>Email:*</span>
+                                </div>
+
+                            </div>
+                            <div class="flex3">
+                                <div class="inputOfRegister">
+                                    <input id="emailAdreess" type="email" placeholder="needs to have a @">
+                                </div>
+                                <img id="emailGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                                <img id="emailBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                                <br>
+                                <div class="emailInUse" id="emailInUse">this email address is in use, <span class="logInWhenEmailIsInUse" id="logInWhenEmailIsInUse">log in</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="flex1 dispalyFlex homePhone rowOfInput">
+                            <div class="flex1">
+                                <div class="stepsToFill"><span class="centerTheNumber">4</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="detailOfInput"><span>Home Phone:</span>
+                                </div>
+                            </div>
+                            <div class="flex3">
+                                <div class="inputOfRegister">
+                                    <input id="homePhone" type="number" placeholder="9 numbers or more!">
+                                </div>
+                                <img id="homePhoneGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                                <img id="homePhoneBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex cellPhone rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">5</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Cell Phone:</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="cellPhone" type="number" placeholder="9 numbers or more!">
+                            </div>
+                            <img id="cellPhoneGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="cellPhoneBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex dateOfBirth rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">6</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Date of Birth:*</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="DOB" class="dateInput" type="date">
+                            </div>
+                            <img id="DOBGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV moveTheV">
+                            <img id="DOBBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX moveThex">
+
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex lisenceNumber rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">7</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>License Number:*</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="licenseNumber" type="number" placeholder="at leaset 5 numbers">
+                            </div>
+                            <img id="licenseNumberGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="licenseNumberBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex userName rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">8</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Choose your username:*</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="usernameChoosen" type="text" placeholder="6 characters or more!">
+                            </div>
+                            <img id="usernameGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="usernameBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                            <br>
+                            <div class="userNameInUse" id="userNameInUse">this username is in use, <span class="logInWhenUserNameInUse" id="logInWhenUserNameInUse">log in</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex userPassword rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">9</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Create a Password:*</span>
+                                <br>
+                                <input class="passwordShowInput" id="firstPasswordShow" type="checkbox">
+                                <label for="firstPasswordShow" class="passwordShowWords">Show Password
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="firstPassword" type="password" placeholder="6 characters or more!">
+                            </div>
+                            <img id="passwordGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="passwordBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex reEnterUserPassword rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber10">10</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Enter Password Again:*</span> 
+                                <br>
+                                <input class="passwordShowInput" id="secondPasswordShow" type="checkbox">
+                                <label for="secondPasswordShow" class="passwordShowWords">Show Password
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="repetPassword" type="password" placeholder="needs to be the same">
+                            </div>
+                            <img id="repPasswordGood" src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="" class="hideTheV">
+                            <img id="repPasswordBad" src="https://abs.twimg.com/a/1419352959/img/t1/error.png" alt="" class="hideTheX">
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex submitRegerstrasion rowOfInput">
+                        <input id="submitForm" class="submitForm" type="button" value="Register">
+                    </div>
+                    <div class="flex1">
+                        <div id="notAlltInputsCoract" class="notAlltInputsCoract">Please make sure all fileds have a&nbsp;
+                            <img src="https://abs.twimg.com/a/1419352959/img/t1/accept.png" alt="">&nbsp;next to them</div>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <section class="signin" id="signin">
+            <article>
+                <hgroup class="signinAndRegister">
+                    <div class="flex1 backToRegister hoverGray" id="backToRegister">Sign up</div>
+                    <div class="flex1 signInOldUser">Sign in</div>
+                </hgroup>
+                <form action="">
+                    <div class="flex1 dispalyFlex userEntersHisUserName rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">1</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Username:</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="userNameHeWantsToGpInto" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex userEntersHisUserPassword rowOfInput">
+                        <div class="flex1">
+                            <div class="stepsToFill"><span class="centerTheNumber">2</span>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="detailOfInput"><span>Password:</span>
+                                <br>
+                                <input class="passwordShowInput" id="signInPasswordShow" type="checkbox">
+                                <label for="SignInPasswordShow" class="passwordShowWords">Show Password
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex3">
+                            <div class="inputOfRegister">
+                                <input id="passwordHeEnterd" type="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex1 dispalyFlex submitSignIn rowOfInput">
+                        <input class="submitLogIn" id="submitLogIn" type="button" value="Log In">
+                    </div>
+                    <div class="flex1">
+                        <div id="noSuchAccount" class="noSuchAccount">Invalid Username / Password </div>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </div>
+   
+</body>
+
+</html>

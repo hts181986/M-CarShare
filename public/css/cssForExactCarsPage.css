@@ -1,0 +1,186 @@
+.carOption {
+    height: 238.4px;
+    display: flex;
+    width: 62%;
+    margin-top: 1%;
+    margin-left: 19%;
+    border: white solid 2px;
+    position: relative;
+    background-color: rgb(202, 198, 198);
+    border-radius: 70px;
+    cursor: pointer;
+}
+.carImg {
+    width: 89%;
+    border-bottom-left-radius: 70px;
+    border-top-left-radius: 70px;
+    height: 238px;
+}
+.mainImageForExactCarPage {
+    height: 1111px;
+    width: 95.1%;
+    position: absolute;
+}
+.theWholePageForExactCarPage {
+    margin-top: 1%;
+    width: 95.1%;
+    height: 1191px;
+    margin-left: 2.4%;
+    background-color: rgb(140, 140, 140);
+    box-shadow: #444 0px 0px 70px;
+    display: inline-block;
+}
+.makeTheDivHeigher {
+    height: 223px;
+}
+.hrStyle {
+    width: 14%;
+    border-color: green;
+    margin-left: 42%;
+}
+.carDetails {
+    text-align: center;
+}
+.yopCarDetails {
+    margin-top: 6%;
+}
+.priceInGreen {
+    color: green;
+    font-size: 30px;
+}
+.stepsConector {
+    display: inline-block;
+    width: 14px;
+    height: 5px;
+    position: relative;
+    margin-left: -4px;
+    background-color: black;
+    margin-right: -5px;
+}
+.singlStatusStage {
+    margin-top: 1%;
+    position: relative;
+    color: black;
+    padding: 1%;
+    opacity: 0.4;
+    display: inline-block;
+    font-size: 14px;
+    background-color: white;
+}
+.stepPageThatYouAreOn {
+    opacity: 1;
+    color: rgb(87, 115, 255);
+}
+.status {
+    margin-left: 25%;
+}
+.stepPageDone {
+    color: green;
+}
+.popUpAlert {
+    display: none;
+    position: fixed;
+    color: black;
+    background-color: rgb(82, 80, 80);
+    width: 520px;
+    height: 204px;
+    text-align: center;
+    border-radius: 52px;
+    z-index: 100;
+    margin-left: 27%;
+    margin-top: 14%;
+}
+.popUpAlertStyles {
+    margin-top: 9%;
+    font-size: 22px;
+}
+.dispayTheButtons {
+    display: flex;
+    margin-top: 4%;
+}
+.goBackToSelectSize {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 33px;
+    width: 24%;
+    border-radius: 25px;
+    cursor: pointer;
+    float: right;
+}
+.continueButton {
+    text-align: left;
+    margin-left: 4%;
+}
+.continuToChooseExactCar {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 33px;
+    width: 48%;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.opa {
+    opacity: 0.4;
+}
+.TypeOfCar {
+    color: red;
+}
+.statusIfClientCameFromHomePage {
+    margin-left: 25%;
+    display: none;
+}
+.xToGoBack {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    color: white;
+    display: inline-block;
+    float: left;
+    border-radius: 20px;
+    margin-left: 11px;
+    line-height: 22px;
+    cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+    .carOption {
+        width: 88%;
+        margin-top: 3%;
+        margin-left: 6%;
+    }
+    .mainImageForExactCarPage {
+        height: 1164px;
+        width: 100%;
+    }
+    .theWholePageForExactCarPage {
+        margin-top: 0%;
+        width: 100%;
+        margin-left: 0%;
+        height: 1245px;
+    }
+    .popUpAlert {
+        margin-left: 14%;
+        width: 70%
+    }
+    .dispalyNoneUnder650px {
+        visibility: hidden;
+        display: none;
+    }
+}
+.smallImgSize {
+    width: 55.4;
+}
+.containerForTheTheSmallImg {
+    margin-left: -39px;
+    display: flex;
+    flex-direction: column;
+}
+#titel {} .title {
+    display: none;
+    position: absolute;
+    background-color: rgb(87, 115, 255);
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+}

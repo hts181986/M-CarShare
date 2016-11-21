@@ -1,0 +1,245 @@
+.whiteBG {
+  
+    width: 35%;
+    margin-left: 5%;
+    height: auto;
+    margin-top: 4%;
+    padding: 43px;
+    position: absolute;
+}
+.changeAccountDetails {
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 68%;
+    height: 34px;
+    width: 32%;
+    margin-top: 22px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.changeDetailsArea {
+    width: 38%;
+    height: auto;
+    position: absolute;
+    float: left;
+    background-color: gray;
+    margin-left: 6.8%;
+    margin-top: 5.07%;
+    box-shadow: #444 0px 0px 70px;
+    display: none;
+  
+}
+.register {
+  
+    width: 38%;
+    height: auto;
+    position: absolute;
+    float: left;
+    margin-left: 28%;
+    margin-top: 4.07%;
+    box-shadow: #444 0px 0px 70px;
+}
+.registerAndSignin {
+    display: flex;
+    text-align: center;
+}
+.registerNewCoustumer {
+    margin-top: 0px;
+    font-size: 100%;
+    line-height: 237%;
+}
+.signIn {
+    padding-top: 5px;
+    margin-top: 0px;
+    line-height: 205%;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: black;
+    color: white;
+}
+.signin {
+   
+    box-shadow: #444 0px 0px 70px;
+    width: 38%;
+    height: auto;
+    position: absolute;
+    float: left;
+    margin-left: 28%;
+    margin-top: 4.07%;
+    display: none;
+}
+.signinAndRegister {
+    display: flex;
+    text-align: center;
+}
+.signInOldUser {
+    padding: 5px;
+    padding-top: 2.6%;
+    font-size: 100%;
+}
+.backToRegister {
+    padding-top: 5px;
+    margin-top: 0px;
+    line-height: 205%;
+    font-size: 100%;
+    background-color: black;
+    color: white;
+}
+.stepsToFill {
+    width: 25px;
+    opacity: 0.6;
+    height: 18px;
+    margin-left: 41%;
+    border: gray solid 1px;
+    border-radius: 25px;
+}
+.centerTheNumber {
+    s line-height: 26px;
+    margin-left: 8px;
+}
+.detailOfInput {
+    margin-left: 10%;
+}
+.inputOfRegister {
+    display: inline-block;
+}
+.displayFlexColumn {
+    display: flex;
+    flex-direction: column;
+}
+.dispalyFlex {
+    display: flex;
+}
+.rowOfInput {
+    margin-top: 5%
+}
+.submitForm {
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 68%;
+    height: 34px;
+    width: 24%;
+    margin-top: 5px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.dateInput {
+    width: 108%;
+}
+.centerTheNumber10 {
+    line-height: 26px;
+    margin-left: 4px;
+}
+.hideTheV {
+    display: none;
+}
+.hideTheX {
+    display: none;
+}
+.moveTheV {
+    margin-left: 7%;
+}
+.moveThex {
+    margin-left: 7%;
+}
+.emailInUse {
+    font-size: 73%;
+    color: red;
+    display: none;
+}
+.logInWhenEmailIsInUse {
+    text-decoration: underline;
+    color: -webkit-link;
+    cursor: pointer;
+}
+.userNameInUse {
+    font-size: 73%;
+    color: red;
+    display: none;
+}
+.logInWhenUserNameInUse {
+    text-decoration: underline;
+    color: -webkit-link;
+    cursor: pointer;
+}
+.submitLogIn {
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 68%;
+    height: 34px;
+    width: 24%;
+    margin-top: 5px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.noSuchAccount {
+    display: none;
+    color: red;
+    text-align: center;
+}
+.notAlltInputsCoract {
+    display: none;
+    color: red;
+    text-align: center;
+}
+.displayFlex {
+    display: flex;
+}
+.dadOfMyInfo .displayFlex:nth-child(odd) {
+    color: green;
+}
+.dadOfMyInfo .displayFlex:nth-child(even) {
+    color: rgb(87, 115, 255);
+}
+.dadOfMyInfo .displayFlex {
+    margin-bottom: 3%;
+}
+.resevationsArea {
+    width: 38%;
+    height: auto;
+    position: absolute;
+    float: left;
+    margin-left: 50%;
+    margin-top: 4.07%;
+    box-shadow: #444 0px 0px 70px;
+    display: none;
+}
+.reservationHeader {
+    text-align: center;
+}
+.headOfDetails {
+    display: flex;
+    text-align: center;
+    margin: 2%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+.details {
+    flex: 2;
+}
+.detailsPrice {
+    flex: 1;
+}
+.headerMoreCss {
+    font-weight: 600;
+}
+@media screen and (max-width: 650px) {
+    .whiteBG {
+        width: 68%;
+        margin-left: 10%;
+    }
+    .resevationsArea {
+        width: 81.8%;
+        margin-left: 10%;
+        margin-top: 625px;
+    }
+    .changeDetailsArea {
+        width: 86%;
+        background-color: gray;
+        margin-left: 8%;
+        margin-top: 6.07%;
+    }
+}

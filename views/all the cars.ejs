@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <title>M-Car Share</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/css%20for%20all%20pages.css">
+    <link rel="stylesheet" href="css/cssForCarsPage.css">
+    <script src="js/main.js"></script>
+    <script src="js/js-for-all-pages/jquery-2.1.3.min.js"></script>
+    <script src="js/js-for-all-pages/todaysYear.js"></script>
+    <script src="js/jsForCarsPage/carsInLocalStorage.js"></script>
+    <script src="js/jsForCarsPage/addImgesAndTextUsingJS.js"></script>
+    <script src="js/jsForCarsPage/sendClientRecestFromCarsPageToNextPage.js"></script>
+    <script src="js/js-for-all-pages/clearLSofBookingProsses.js"></script>
+
+    <script src="js/js-for-all-pages/arrayWithAllUsers.js"></script>
+    <script src="js/js-for-all-pages/arrayWithCurentUser.js"></script>
+    <script src="js/js-for-all-pages/localStorage.js"></script>
+    <script src="js/js-for-all-pages/welcomeClientWithTime.js"></script>
+    <script src="js/js-for-all-pages/logIn.js"></script>
+    <script src="js/js-for-all-pages/logOut.js"></script>
+</head>
+
+<body>
+    <div class="popUpAlert" id="popUpAlert">
+        <div class="xToGoBack" id="xToGoBack">x</div>
+
+        <div class="popUpAlertStyles">You have chosen <span class="TypeOfCar"></span> size car!
+            <br>
+            <br>To choose the Model of <span class="TypeOfCar"></span> car, press Continue
+        </div>
+        <div class="dispayTheButtons">
+            <div class="flex2">
+                <input id="goBackToSelectSize" class="goBackToSelectSize" type="button" value="Go Back">
+            </div>
+            <div class="flex1 continueButton">
+                <input id="continuToChooseExactCar" class="continuToChooseExactCar" type="button" value="Continue">
+            </div>
+        </div>
+    </div>
+    <div class="theWholePage" id="theWholePage">
+        <header class="topHeader">
+            
+            <div class="childrenOfHeader"></div>
+            <div class="childrenOfHeader logInOrOut">
+                <div class="welcomeTheClient" id="welcomeTheClient"></div>
+                <div class="hideLogIn" id="logIn">Sign in</div>
+                <div class="hideLogOut" id="logOut">Sign out</div>
+            </div>
+        </header>
+       
+        <nav class="MainNav">
+            <div class="flex2 dispalyNoneUnder650px"></div>
+
+            <a class="flex1 hoverGray navLinkCss noBorder pageYouAreNotOn" href="index.html">
+                <div>Home Page</div>
+            </a>
+
+            <a id="seeCarsPage" class="flex1 hoverGray navLinkCss pageYouOn" href="all%20the%20cars.html">
+                <div>Available Cars</div>
+            </a>
+            <a id="showOnlyWhenLogedIn" class="flex1 hoverGray navLinkCss pageYouAreNotOn hideThisWhileClientNotLogedIn" href="My%20Account.html">
+                <div>My Account</div>
+            </a>
+            <a id="dontShowWhenLogedaiN" class="flex1 hoverGray navLinkCss pageYouAreNotOn" href="sign%20in%20page.html">
+                <div>Sign in / Sign out</div>
+            </a>
+        </nav>
+        <div class="status dispalyNoneUnder650px" id="status">
+            <div class="singlStatusStage stepPageThatYouAreOn">1. Car Class</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">2. Car Model</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">3. Location and Dates</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">4. Price</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">5. Review and Book</div>
+        </div>
+        <div class="statusIfClientCameFromHomePage dispalyNoneUnder650px" id="statusIfClientCameFromHomePage">
+            <div class="singlStatusStage stepPageDone">1. Location and Dates</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage stepPageThatYouAreOn">2. Choose Car Class</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">3. Choose a Car</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">4. Price</div>
+            <div class="stepsConector"></div>
+            <div class="singlStatusStage">5. Review and Book</div>
+        </div>
+
+
+        <!--<div class="chooseCarClasse">Choose Car Class:</div>-->
+        <div class="carOptionArea1">
+            <!--mini-->
+            <div class="flex1 sameHeightForAll minicars homeMadeTitle" id="choosenMiniCars" text="Choose Mini">
+                <div class="centerAndBig">Mini Cars:</div>
+                <div class="fromPriceAday"></div>
+                <div class="divForImage">
+                    <img id="bigImgMiniCar" class="fitTheImage" src="" alt="">
+                </div>
+                <div class="carNameAndImages">
+                    <div id="textForMiniCarInImg" class="flex4 carNameAndModel">
+                        <!--car name and model using js-->
+                    </div>
+
+                </div>
+            </div>
+            <!--full size-->
+            <div class="flex1 sameHeightForAll fullSizeCars homeMadeTitle" id="choosenFSCars" text="Choose Full Size">
+                <div class="centerAndBig">Full Size Cars:</div>
+                <div class="fromPriceAday"></div>
+
+                <div class="divForImage">
+                    <img id="bigImgFullSizeCar" class="fitTheImage" src="" alt="">
+                </div>
+                <div class="carNameAndImages">
+                    <div id="textForFullSizeCarInImg" class="flex4 carNameAndModel">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="carOptionArea2">
+            <!--SUV-->
+            <div class="flex1 sameHeightForAll suvCars homeMadeTitle" id="choosenSUVCars" text="Choose SUV">
+                <div class="centerAndBig">SUV's:</div>
+                <div class="fromPriceAday"></div>
+
+                <div class="divForImage">
+                    <img id="bigImgSuv" class="fitTheImage" src="" alt="">
+                </div>
+                <div class="carNameAndImages">
+                    <div id="textForSUVCarInImg" class="flex4 carNameAndModel">
+                        <!--car name and model using js-->
+                    </div>
+
+                </div>
+            </div>
+            <!--luxury-->
+            <div class="flex1 sameHeightForAll luzaryCars homeMadeTitle" id="choosenLCars" text="Choose Laxury">
+                <div class="centerAndBig">Luxury Cars:</div>
+                <div class="fromPriceAday"></div>
+
+                <div class="divForImage">
+                    <img id="bigImgLuxuryCar" class="fitTheImage" src="" alt="">
+                </div>
+                <div class="carNameAndImages">
+                    <div id="textForLuxuryCarInImg" class="flex4 carNameAndModel">
+                        <!--car name and model using js-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+    <div id="titel" class="title"></div>
+</body>
+
+</html>
