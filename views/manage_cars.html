@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<title>Manage Cars</title>
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+	  <li role="presentation"><a href="manage_users.html">Manage Users</a></li>
+	  <li role="presentation"  class="active"><a href="manage_cars.html">Manage Cars</a></li>
+	  <li role="presentation" ><a href="manage_locations.html">Manage Locations</a></li>
+	 </ul>
+
+
+<form class="search_width">
+	<div class="input-group">
+      <input type="text" class="form-control" placeholder="Search Cars">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Search</button>
+      </span>
+    </div>
+</form>
+
+
+<div class="car_table_width">
+
+	<div class="car_add add">
+		<img src="img/add.png">
+		<a href="add_car.html">Add Car</a>
+	</div>
+
+	<table class="table table-hover text-center">
+	   <thead>
+	      <tr>
+	         <th class="text-center">Plate #</th>
+	         <th class="text-center">Year Model</th>
+	         <th class="text-center">Brand</th>
+			  <th class="text-center">Class</th>
+	         <th class="text-center">Location</th>
+	         <th class="text-center">Edit Car Information</th>
+	      </tr>
+	   </thead>
+	   <tbody>
+	      <tr>
+	         <td>11324</td>
+	         <td>2015</td>
+	         <td>BMW</td>
+			 <td>Luxury</td>
+	         <td>Location 1</td>
+	         <td><a href="edit_car.html"><img src="img/edit.png"></a></td>
+	         <td><a href=""><img src="img/delete.png"></a></td>
+	      </tr>
+	      <tr>
+	        <td>13241</td>
+	         <td>2016</td>
+	         <td>Mercedes</td>
+			  <td>Luxury</td>
+	         <td>Location 2</td>
+	         <td><a href="edit_car.html"><img src="img/edit.png"></a></td>
+	         <td><a href=""><img src="img/delete.png"></a></td>
+	      </tr>
+	      <tr>
+	       <td>52341</td>
+	         <td>2014</td>
+	         <td>Camry</td>
+			  <td>FullSize</td>
+	         <td>Location 3</td>
+	         <td><a href="edit_car.html"><img src="img/edit.png"></a></td>
+	         <td><a href=""><img src="img/delete.png"></a></td>
+	      </tr>
+		  <tr>
+	      </tr>
+	   </tbody>
+	</table>
+</div>
+
+
+
+</body>
+</html>
